@@ -8,11 +8,7 @@ RUN git config --global user.email "yoanndelattre21@gmail.com"
 RUN git config --global user.name "ImWargame"
 RUN apt-get install build-essential libffi-dev libssl-dev libreadline-dev zlib1g-dev libsqlite3-dev -y
 RUN apt-get install ruby-full -y
-RUN gem install rails
-RUN gem install bundler
-RUN gem install nokogiri
-RUN gem install rack
-RUN gem install rspec
+RUN gem install rails bundler nokogiri rack rspec
 VOLUME ["/mnt"]
 EXPOSE 80 443
 WORKDIR  /mnt
