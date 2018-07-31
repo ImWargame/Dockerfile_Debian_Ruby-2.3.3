@@ -7,6 +7,11 @@ RUN git config --global user.name "ImWargame"
 RUN apt-get install build-essential libffi-dev libssl-dev libreadline-dev zlib1g-dev libsqlite3-dev -y
 RUN apt-get install ruby-full -y
 RUN gem install rails bundler nokogiri rack rspec
+
+#     <--clean installation-->
+RUN apt-get -qy clean && \
+      rm -rf /var/lib/apt/lists/*
+
 VOLUME ["/mnt"]
 EXPOSE 80 443
 WORKDIR  /mnt
